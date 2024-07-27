@@ -1,3 +1,7 @@
+::root{
+  --primary-color: #00838f;
+}
+
 body {
   font-family: "Open Sans", sans-serif;
   background-color: #040404;
@@ -25,12 +29,12 @@ body::before {
 }
 
 a {
-  color: #18bdec;
+  color: var(--primary-color);
   text-decoration: none;
 }
 
 a:hover {
-  color: #35e888;
+  color: var(--primary-color);
   text-decoration: none;
 }
 
@@ -60,6 +64,10 @@ h6 {
   transition: ease-in-out 0.3s;
 }
 
+#header img {
+  width: 20%;
+}
+
 #header h1 {
   font-size: 48px;
   margin: 0;
@@ -80,7 +88,33 @@ h6 {
   margin-top: 20px;
   font-size: 1.8rem;
   color: #18bdec;
+  display: inline-block;
 }
+
+/* Efecto máquina de escribir */
+.typing-effect {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 2px solid #18bdec; /* Color y grosor del cursor */
+  animation: typing 2s steps(18, end), blink-caret 0.7s step-end infinite;
+  width: 0; /* Inicialmente oculto */
+}
+
+.typing-effect {
+  width: auto; /* Ajusta el ancho según el contenido */
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; } /* Aquí se ajusta al contenido del span */
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent; }
+  50% { border-color: #18bdec; } /* Color del cursor parpadeante */
+}
+
 
 #header img {
   padding: 0;
@@ -93,16 +127,16 @@ h6 {
 }
 
 #header .social-links a {
-  font-size: 16px;
+  font-size: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
   background: rgba(255, 255, 255, 0.1);
   color: #fff;
   line-height: 1;
-  margin-right: 8px;
+  margin-right: 10px;
   border-radius: 50%;
-  width: 40px;
+  width: 42px;
   height: 40px;
 }
 
@@ -112,11 +146,11 @@ h6 {
 
 @media (max-width: 992px) {
   #header h1 {
-    font-size: 36px;
+    font-size: 40px;
   }
 
   #header h2 {
-    font-size: 25px;
+    font-size: 28px;
     line-height: 30px;
   }
 
@@ -209,7 +243,7 @@ h6 {
   justify-content: space-between;
   padding: 0;
   font-family: "Poppins", sans-serif;
-  font-size: 16px;
+  font-size: 20px;
   font-weight: 400;
   color: rgba(255, 255, 255, 0.7);
   white-space: nowrap;
@@ -255,14 +289,14 @@ h6 {
 */
 .mobile-nav-toggle {
   color: #fff;
-  font-size: 28px;
+  font-size: 32px;
   cursor: pointer;
   display: none;
   line-height: 0;
   transition: 0.5s;
   position: fixed;
-  right: 15px;
-  top: 15px;
+  right: 20px;
+  top: 20px;
 }
 
 @media (max-width: 991px) {
@@ -305,8 +339,9 @@ h6 {
   overflow-y: auto;
   transition: 0.3s;
   border: 2px solid rgba(255, 255, 255, 0.2);
-}
+  background: rgba(4, 27, 40, 0.6);
 
+}
 .navbar-mobile li {
   padding: 12px 20px;
 }
@@ -317,7 +352,7 @@ h6 {
 
 .navbar-mobile a,
 .navbar-mobile a:focus {
-  font-size: 16px;
+  font-size: 25px;
   position: relative;
 }
 
@@ -714,6 +749,18 @@ section .container {
 
 .contact .info-box .social-links a:hover {
   color: #18bdec;
+}
+
+.contact form h3 {
+  padding: 0 0 20px 0;
+  text-align: center;
+  font-weight: bold;
+  color: #18bdec;
+}
+
+.contact form label {
+  margin-bottom: 10px;
+
 }
 
 .contact .php-email-form {
